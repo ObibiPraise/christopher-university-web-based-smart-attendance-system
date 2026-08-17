@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="auth-screen" class="screen auth-screen">
+  <div class="auth-grain"></div>
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <div class="auth-brand-mark">R</div>
+      <div class="auth-brand-text">
+        <span class="auth-brand-name">Register</span>
+        <span class="auth-brand-sub">Attendance, accounted for.</span>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" data-role="student" role="tab">Student</button>
+        <button class="auth-tab" data-role="lecturer" role="tab">Lecturer</button>
+        <button class="auth-tab" data-role="admin" role="tab">Admin</button>
+      </div>
+
+      <form id="login-form" class="auth-form" autocomplete="off">
+        <h1 id="auth-title" class="auth-title">Sign in as a student</h1>
+        <p class="auth-subtitle" id="auth-subtitle">Use your university ID to access your attendance record.</p>
+
+        <label class="field">
+          <span class="field-label" id="id-field-label">Matric number</span>
+          <input type="text" id="login-id" class="field-input" placeholder="e.g. ENG/2022/0143" required>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Password</span>
+          <input type="password" id="login-password" class="field-input" placeholder="••••••••" required>
+        </label>
+
+        <div id="login-error" class="field-error" hidden></div>
+
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+
+        <div class="auth-demo-note">
+          <span id="demo-credentials">Demo: STU001 / student123</span>
+        </div>
+      </form>
+    </div>
+
+    <p class="auth-footnote">First time? Ask your department admin to issue you an ID — or <button id="seed-link" class="link-btn">load demo data</button> to explore.</p>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/store.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
